@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Broker Guide 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            padding: 1%;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 100%;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #c79100 0%, #e5a200 100%);
+            color: white;
+            padding: 15px 1%;
+            text-align: center;
+            border-bottom: 3px solid #a07700;
+        }
+        
+        .header h1 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .header p {
+            font-size: 0.75em;
+            opacity: 0.95;
+        }
+        
+        .nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1%;
+            padding: 1%;
+            background: #f8f9fa;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .nav-btn.active {
+            background: linear-gradient(135deg, #c79100 0%, #e5a200 100%);
+            box-shadow: 0 2px 8px rgba(199, 145, 0, 0.3);
+        }
+        
+        .content {
+            padding: 1%;
+            max-height: calc(100vh - 220px);
+            overflow-y: auto;
+        }
+        
+        .section {
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 {
+            color: #1e3c72;
+            font-size: 1.1em;
+            margin: 12px 0 8px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #e5a200;
+        }
+        
+        h3 {
+            color: #2a5298;
+            font-size: 0.95em;
+            margin: 10px 0 6px 0;
+        }
+        
+        p, li {
+            font-size: 0.85em;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            color: #444;
+        }
+        
+        ul, ol {
+            margin-left: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 8px;
+            border-left: 3px solid #e5a200;
+            margin: 8px 0;
+            border-radius: 3px;
+        }
+        
+        .checklist {
+            background: #e8f4f8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 8px 0;
+        }
+        
+        .checklist-item {
+            padding: 5px;
+            margin: 3px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checklist-item::before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            padding: 8px;
+            border-left: 3px solid #dc3545;
+            margin: 8px 0;
+            border-radius: 3px;
+        }
+        
+        .tip {
+            background: #d1ecf1;
+            padding: 8px;
+            border-left: 3px solid #17a2b8;
+            margin: 8px 0;
+            border-radius: 3px;
+        }
+        
+        .footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.75em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Filipino Real Estate Broker Guide</h1>
+            <p>2026 Professional Standards & Instructions</p>
+        </div>
+        
+        <div class="nav">
+            <button class="nav-btn active" onclick="showSection('getting-started')">Getting Started</button>
+            <button class="nav-btn" onclick="showSection('licensing')">Licensing</button>
+            <button class="nav-btn" onclick="showSection('best-practices')">Best Practices</button>
+            <button class="nav-btn" onclick="showSection('legal')">Legal</button>
+            <button class="nav-btn" onclick="showSection('marketing')">Marketing</button>
+            <button class="nav-btn" onclick="showSection('transactions')">Transactions</button>
+            <button class="nav-btn" onclick="showSection('property-types')">Properties</button>
+            <button class="nav-btn" onclick="showSection('regional-markets')">Markets</button>
+            <button class="nav-btn" onclick="showSection('crisis')">Crisis Mgmt</button>
+            <button class="nav-btn" onclick="showSection('prospecting')">Prospecting</button>
+            <button class="nav-btn" onclick="showSection('reference')">Reference</button>
+            <button class="nav-btn" onclick="showSection('career')">Career</button>
+        </div>
+        
+        <div class="content">
+            <div id="getting-started" class="section active">
+                <h2>Getting Started as a Real Estate Broker</h2>
+                
+                <div class="highlight">
+                    <strong>Welcome to the Philippine Real Estate Industry!</strong> This guide will help you navigate your career as a licensed real estate broker in 2026.
+                </div>
+                
+                <h3>Essential First Steps</h3>
+                <ol>
+                    <li>Ensure your PRC license is active and updated</li>
+                    <li>Register with DHSUD (Department of Human Settlements and Urban Development)</li>
+                    <li>Secure Professional Tax Receipt (PTR)</li>
+                    <li>Get Professional Indemnity Insurance</li>
+                    <li>Join a reputable brokerage firm or establish your own</li>
+                </ol>
+                
+                <h3>Required Documents to Keep</h3>
+                <div class="checklist">
+                    <div class="checklist-item">Valid PRC License (renew every 3 years)</div>
+                    <div class="checklist-item">Professional Tax Receipt (annual)</div>
+                    <div class="checklist-item">DHSUD Registration Certificate</div>
+                    <div class="checklist-item">Professional Indemnity Insurance</div>
+                    <div class="checklist-item">Business Permits (if operating own firm)</div>
+                    <div class="checklist-item">BIR Registration (TIN)</div>
+                </div>
+                
+                <h3>Daily Responsibilities</h3>
+                <ul>
+                    <li>Client consultations and property viewings</li>
+                    <li>Market research and property valuation</li>
+                    <li>Negotiating deals between buyers and sellers</li>
+                    <li>Preparing contracts and legal documents</li>
+                    <li>Following up on transactions and closings</li>
+                    <li>Networking and building client relationships</li>
+                </ul>
+                
+                <div class="tip">
+                    <strong>Pro Tip:</strong> Build your personal brand early. Create social media profiles showcasing your expertise in specific areas like BGC condos, Makati commercial properties, or provincial land development.
+                </div>
+            </div>
+            
+            <div id="licensing" class="section">
+                <h2>Licensing & Professional Development</h2>
+                
+                <h3>PRC License Requirements (2026)</h3>
+                <ul>
+                    <li>Must be Filipino citizen or permanent resident</li>
+                    <li>At least 18 years of age</li>
+                    <li>College degree or completion of specific real estate courses</li>
+                    <li>Pass the Real Estate Broker Licensure Examination</li>
+                    <li>No conviction of crimes involving moral turpitude</li>
+                </ul>
+                
+                <h3>License Renewal Process</h3>
+                <ol>
+                    <li>Complete 45 CPD units within 3-year cycle</li>
+                    <li>Submit renewal application to PRC 3 months before expiry</li>
+                    <li>Pay renewal fees (approximately ₱450-650)</li>
+                    <li>Submit updated 2x2 photos</li>
+                    <li>Present proof of CPD compliance</li>
+                </ol>
+                
+                <div class="highlight">
+                    <strong>CPD Requirements:</strong> 45 units total - including ethics, real estate laws, taxation, property management, and market trends.
+                </div>
+                
+                <h3>Continuing Professional Development</h3>
+                <p>You must earn 45 CPD units every 3 years:</p>
+                <ul>
+                    <li>Core subjects: 30 units (Real Estate Law, Ethics, Taxation)</li>
+                    <li>Elective subjects: 15 units (Marketing, Property Management, Technology)</li>
+                    <li>Attend PRC-accredited seminars, workshops, or online courses</li>
+                </ul>
+                
+                <div class="warning">
+                    <strong>Warning:</strong> Practicing without an active license can result in fines up to ₱100,000 and imprisonment. Always keep your license current!
+                </div>
+                
+                <h3>Professional Organizations to Join</h3>
+                <ul>
+                    <li>Philippine Association of Real Estate Boards (PAREB)</li>
+                    <li>Chamber of Real Estate and Builders' Associations (CREBA)</li>
+                    <li>Association of Realtors Cebu (ARC) - for Cebu-based brokers</li>
+                    <li>Real Estate Service Practitioners Association of the Philippines (RESPAP)</li>
+                </ul>
+            </div>
+            
+            <div id="best-practices" class="section">
+                <h2>Best Practices for Filipino Brokers</h2>
+                
+                <h3>Client Communication Excellence</h3>
+                <ul>
+                    <li>Respond to inquiries within 2 hours during business hours</li>
+                    <li>Use multiple channels: SMS, Viber, WhatsApp, Messenger, email</li>
+                    <li>Provide weekly updates to active clients</li>
+                    <li>Be transparent about property conditions and pricing</li>
+                    <li>Set realistic expectations about timelines</li>
+                </ul>
+                
+                <h3>Property Showing Protocol</h3>
+                <div class="checklist">
+                    <div class="checklist-item">Schedule appointments in advance</div>
+                    <div class="checklist-item">Arrive 10 minutes early to prepare</div>
+                    <div class="checklist-item">Bring property documents and comps</div>
+                    <div class="checklist-item">Highlight unique features and benefits</div>
+                    <div class="checklist-item">Address concerns honestly</div>
+                    <div class="checklist-item">Follow up within 24 hours</div>
+                </div>
+                
+                <h3>Building Long-Term Client Relationships</h3>
+                <ol>
+                    <li>Send birthday and holiday greetings</li>
+                    <li>Share market updates and investment tips quarterly</li>
+                    <li>Offer property management assistance post-sale</li>
+                    <li>Request referrals and testimonials</li>
+                    <li>Maintain a CRM database of all clients</li>
+                </ol>
+                
+                <div class="tip">
+                    <strong>Filipino Touch:</strong> Remember special occasions, use "po" and "opo" appropriately, and consider cultural preferences when showing properties (feng shui, location near churches, etc.).
+                </div>
+                
+                <h3>Negotiation Strategies</h3>
+                <ul>
+                    <li>Know the property's true market value thoroughly</li>
+                    <li>Understand both parties' motivations and timelines</li>
+                    <li>Present multiple options, not ultimatums</li>
+                    <li>Document all offers and counteroffers in writing</li>
+                    <li>Stay neutral and professional, even in heated discussions</li>
+                    <li>Know when to walk away from unreasonable deals</li>
+                </ul>
+                
+                <div class="highlight">
+                    <strong>Commission Standard:</strong> Typical broker commission is 3-5% of sale price, split between buyer's and seller's agents. Always clarify commission structure upfront.
+                </div>
+            </div>
+            
+            <div id="legal" class="section">
+                <h2>Legal & Compliance Requirements</h2>
+                
+                <h3>Essential Legal Knowledge</h3>
+                <ul>
+                    <li>RA 9646 - Real Estate Service Act (RESA)</li>
+                    <li>Maceda Law - protection for installment buyers</li>
+                    <li>Urban Development and Housing Act</li>
+                    <li>Condominium Act of 2009</li>
+                    <li>Data Privacy Act of 2012</li>
+                    <li>Anti-Dummy Law (foreign ownership restrictions)</li>
+                </ul>
+                
+                <h3>Required Transaction Documents</h3>
+                <div class="checklist">
+                    <div class="checklist-item">Exclusive Listing Agreement (if applicable)</div>
+                    <div class="checklist-item">Reservation Agreement</div>
+                    <div class="checklist-item">Contract to Sell or Deed of Sale</div>
+                    <div class="checklist-item">Transfer Certificate of Title (TCT) verification</div>
+                    <div class="checklist-item">Tax Declaration and Clearances</div>
+                    <div class="checklist-item">BIR Capital Gains Tax forms</div>
+                    <div class="checklist-item">Transfer Tax and Documentary Stamp Tax receipts</div>
+                </div>
+                
+                <h3>Due Diligence Checklist</h3>
+                <p>Before any transaction, verify:</p>
+                <ol>
+                    <li>Title authenticity at Registry of Deeds</li>
+                    <li>Tax declarations are updated and paid</li>
+                    <li>No liens or encumbrances on property</li>
+                    <li>Zoning compliance and land use classification</li>
+                    <li>Building permits for structures (if applicable)</li>
+                    <li>Association dues current (for condos/subdivisions)</li>
+                    <li>Seller's identity and authority to sell</li>
+                </ol>
+                
+                <div class="warning">
+                    <strong>Red Flags to Watch:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Seller refuses to show original title</li>
+                        <li>Property taxes haven't been paid in years</li>
+                        <li>Rushed transactions with unrealistic deadlines</li>
+                        <li>Below-market pricing without clear reason</li>
+                        <li>Seller not personally present during critical steps</li>
+                    </ul>
+                </div>
+                
+                <h3>Foreign Buyer Restrictions</h3>
+                <ul>
+                    <li>Foreigners can own condominium units (max 40% foreign ownership per building)</li>
+                    <li>Foreigners CANNOT own land in the Philippines</li>
+                    <li>Option: Long-term lease (50 years, renewable for 25 years)</li>
+                    <li>Option: Philippine corporation with 60% Filipino ownership</li>
+                </ul>
+                
+                <h3>Ethical Guidelines</h3>
+                <ul>
+                    <li>Never misrepresent property conditions or ownership</li>
+                    <li>Disclose all known defects and issues</li>
+                    <li>Maintain client confidentiality</li>
+                    <li>Avoid conflicts of interest</li>
+                    <li>Never practice law or give legal advice</li>
+                    <li>Protect earnest money deposits in escrow</li>
+                </ul>
+            </div>
+            
+            <div id="marketing" class="section">
+                <h2>Marketing Your Services & Listings</h2>
+                
+                <h3>Digital Marketing Essentials (2026)</h3>
+                <ul>
+                    <li><strong>Facebook:</strong> Primary platform for Filipino buyers. Post listings daily with professional photos</li>
+                    <li><strong>Instagram:</strong> Use Stories and Reels for property tours. Target younger buyers</li>
+                    <li><strong>TikTok:</strong> Short video tours and market tips. Growing fast in PH</li>
+                    <li><strong>YouTube:</strong> Detailed property walkthroughs and neighborhood guides</li>
+                    <li><strong>Property Portals:</strong> Lamudi, Property24, Dot Property, Carousell</li>
+                </ul>
+                
+                <h3>Creating Effective Listings</h3>
+                <div class="tip">
+                    <strong>Photo Requirements:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Minimum 8-10 high-quality photos per listing</li>
+                        <li>Exterior shots showing façade and surrounding area</li>
+                        <li>Living areas, bedrooms, kitchen, bathrooms</li>
+                        <li>Special features: pool, garden, parking, view</li>
+                        <li>Take photos during daytime with good lighting</li>
+                    </ul>
+                </div>
+                
+                <h3>Listing Description Template</h3>
+                <p>Include these elements:</p>
+                <ol>
+                    <li>Catchy headline with location and key feature</li>
+                    <li>Property type, lot/floor area, bedrooms, bathrooms</li>
+                    <li>Location with nearby landmarks (schools, malls, transport)</li>
+                    <li>Unique selling points and amenities</li>
+                    <li>Price and payment terms</li>
+                    <li>Contact information and viewing schedule</li>
+                </ol>
+                
+                <h3>Networking Strategies</h3>
+                <ul>
+                    <li>Attend local Chamber of Commerce events</li>
+                    <li>Join barangay and homeowners' associations</li>
+                    <li>Partner with banks and lending institutions</li>
+                    <li>Connect with lawyers, engineers, contractors</li>
+                    <li>Participate in property expos and trade shows</li>
+                    <li>Host free property investment seminars</li>
+                </ul>
+                
+                <div class="highlight">
+                    <strong>Budget Allocation:</strong> Spend 10-15% of expected monthly commission on marketing. Focus on digital ads (Facebook Ads, Google Ads) and professional photography.
+                </div>
+                
+                <h3>Building Your Personal Brand</h3>
+                <ul>
+                    <li>Specialize in a niche (luxury condos, foreclosures, provincial land)</li>
+                    <li>Create a professional logo and business cards</li>
+                    <li>Maintain consistent branding across all platforms</li>
+                    <li>Share valuable content: market reports, investment tips</li>
+                    <li>Collect and showcase client testimonials</li>
+                    <li>Be active and responsive on social media</li>
+                </ul>
+            </div>
+            
+            <div id="transactions" class="section">
+                <h2>Transaction Process Guide</h2>
+                
+                <h3>Step-by-Step Buying Process</h3>
+                <ol>
+                    <li><strong>Client Consultation:</strong> Understand budget, preferences, timeline</li>
+                    <li><strong>Property Search:</strong> Show 5-8 suitable options</li>
+                    <li><strong>Property Viewing:</strong> Schedule and conduct tours</li>
+                    <li><strong>Offer & Negotiation:</strong> Submit written offer, negotiate terms</li>
+                    <li><strong>Reservation:</strong> Collect reservation fee (₱20,000-100,000)</li>
+                    <li><strong>Due Diligence:</strong> Verify title, check property status</li>
+                    <li><strong>Contract Signing:</strong> Contract to Sell or Deed of Sale</li>
+                    <li><strong>Payment:</strong> Coordinate with bank for loan processing</li>
+                    <li><strong>Title Transfer:</strong> Process at Registry of Deeds</li>
+                    <li><strong>Turnover:</strong> Hand over keys and documents</li>
+                </ol>
+                
+                <h3>Selling Process Timeline</h3>
+                <ul>
+                    <li><strong>Week 1:</strong> Property evaluation, pricing strategy, listing agreement</li>
+                    <li><strong>Week 2-3:</strong> Professional photos, marketing launch, property showings</li>
+                    <li><strong>Week 4-8:</strong> Active marketing, buyer negotiations, offers received</li>
+                    <li><strong>Week 9-10:</strong> Contract preparation, due diligence period</li>
+                    <li><strong>Week 11-16:</strong> Bank loan processing, title verification</li>
+                    <li><strong>Week 17-20:</strong> Final payments, title transfer, turnover</li>
+                </ul>
+                
+                <h3>Common Payment Structures</h3>
+                <div class="highlight">
+                    <strong>Cash Payment:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Reservation: 10-20% of total price</li>
+                        <li>Balance: Upon completion of documents (30-60 days)</li>
+                        <li>Fastest process: 45-90 days total</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight">
+                    <strong>Bank Financing:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Downpayment: 20-30% (can be paid in installments)</li>
+                        <li>Bank loan: 70-80% of appraised value</li>
+                        <li>Typical terms: 5-30 years at 6-10% interest</li>
+                        <li>Processing: 60-90 days</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight">
+                    <strong>Pag-IBIG Financing:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Maximum loan: ₱6,000,000</li>
+                        <li>Interest rate: 5-7% (usually lower than banks)</li>
+                        <li>Maximum term: 30 years</li>
+                        <li>Must be Pag-IBIG member with 24 monthly contributions</li>
+                    </ul>
+                </div>
+                
+                <h3>Closing Costs Breakdown</h3>
+                <p><strong>Seller's Expenses:</strong></p>
+                <ul>
+                    <li>Capital Gains Tax: 6% of selling price or zonal value</li>
+                    <li>Documentary Stamp Tax: 1.5% of selling price</li>
+                    <li>Transfer Tax: 0.5-0.75% (varies by LGU)</li>
+                    <li>Real Estate Broker Commission: 3-5%</li>
+                    <li>Notarial fees: ₱5,000-15,000</li>
+                </ul>
+                
+                <p><strong>Buyer's Expenses:</strong></p>
+                <ul>
+                    <li>Registration Fee: approximately 0.25% of property value</li>
+                    <li>Documentary Stamp Tax: 1.5% (if not paid by seller)</li>
+                    <li>Transfer Tax: 0.5-0.75% (if not paid by seller)</li>
+                    <li>Real Estate Broker Commission: 2-3% (if separate buyer's agent)</li>
+                    <li>Loan processing fees (if financed): 1-2% of loan amount</li>
+                </ul>
+                
+                <div class="warning">
+                    <strong>Important:</strong> Always discuss who pays what expenses upfront. Get agreement in writing to avoid disputes during closing.
+                </div>
+                
+                <h3>Post-Sale Responsibilities</h3>
+                <ul>
+                    <li>Ensure all documents are properly filed</li>
+                    <li>Follow up on title transfer completion (60-90 days)</li>
+                    <li>Provide utility transfer assistance to buyer</li>
+                    <li>Request testimonial and referrals</li>
+                    <li>Maintain relationship for future transactions</li>
+                    <li>Keep transaction records for 7 years minimum</li>
+                </ul>
+            </div>
+            
+            <div id="property-types" class="section">
+                <h2>Property Types Deep Dive</h2>
+                
+                <h3>Condominiums</h3>
+                <p><strong>Pre-Selling Units:</strong></p>
+                <ul>
+                    <li>Lower prices: 15-30% discount vs ready units</li>
+                    <li>Flexible payment terms (12-60 months to move-in)</li>
+                    <li>Risk: construction delays common (6-12 months typical)</li>
+                    <li>Higher appreciation potential before turnover</li>
+                    <li>Requires: reservation (₱20K-50K), downpayment (10-20%)</li>
+                </ul>
+                
+                <p><strong>Ready for Occupancy (RFO):</strong></p>
+                <ul>
+                    <li>Immediate move-in after full payment</li>
+                    <li>See actual unit condition before buying</li>
+                    <li>Limited payment terms (usually cash or bank financing only)</li>
+                    <li>Higher price but no waiting time</li>
+                    <li>Better for investors needing immediate rental income</li>
+                </ul>
+                
+                <div class="tip">
+                    <strong>Condo Selling Points:</strong> Location near business districts, amenities (pool, gym, function rooms), security, parking slots, property management quality, association dues rate.
+                </div>
+                
+                <h3>House & Lot Subdivisions</h3>
+                <ul>
+                    <li>Best for families wanting privacy and space</li>
+                    <li>Lot sizes: 50-500+ sqm typical</li>
+                    <li>Price range: ₱2M-50M+ depending on location</li>
+                    <li>Check: HOA rules, monthly dues, amenities (clubhouse, playground)</li>
+                    <li>Verify: water source, flood history, road access</li>
+                    <li>Common issues: illegal structures, unpaid dues, boundary disputes</li>
+                </ul>
+                
+                <h3>Townhouses</h3>
+                <ul>
+                    <li>Middle ground between condo and house & lot</li>
+                    <li>Typical: 2-3 floors, 80-150 sqm floor area</li>
+                    <li>Lower than house & lot but more space than condo</li>
+                    <li>Shared walls with neighbors (check soundproofing)</li>
+                    <li>Usually includes 1-2 parking slots</li>
+                    <li>Popular in: Quezon City, Parañaque, Las Piñas, Cavite</li>
+                </ul>
+                
+                <h3>Commercial Properties</h3>
+                <div class="highlight">
+                    <strong>Types:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Office spaces: ₱500-2,000/sqm monthly lease</li>
+                        <li>Retail shops: ₱800-3,000/sqm monthly lease</li>
+                        <li>Warehouses: ₱150-400/sqm monthly lease</li>
+                        <li>Mixed-use buildings: residential + commercial</li>
+                    </ul>
+                </div>
+                
+                <p><strong>Commercial Property Considerations:</strong></p>
+                <ul>
+                    <li>Higher commission: 5-10% typical</li>
+                    <li>Longer sales cycle: 6-18 months average</li>
+                    <li>Requires business permit verification</li>
+                    <li>Check zoning: commercial use allowed?</li>
+                    <li>Lease vs sale: commercial lease contracts 3-10 years</li>
+                    <li>Important: foot traffic, visibility, parking, access</li>
+                </ul>
+                
+                <h3>Agricultural/Farm Land</h3>
+                <ul>
+                    <li>Must verify: land classification (agricultural, residential, commercial)</li>
+                    <li>DAR clearance required if covered by CARP</li>
+                    <li>Restrictions: foreigners cannot own, corporate ownership limited</li>
+                    <li>Price: ₱300-5,000/sqm depending on location and development</li>
+                    <li>Conversion to residential: requires HLURB/DHSUD approval</li>
+                    <li>Investment potential: near expanding cities (Bulacan, Cavite, Laguna)</li>
+                </ul>
+                
+                <div class="warning">
+                    <strong>Farm Land Red Flags:</strong> No access road, disputed ownership, occupied by tenants/farmers (ARBs), landlocked property, unclear boundaries.
+                </div>
+                
+                <h3>Foreclosed Properties</h3>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Below market price: 10-30% discount typical</li>
+                    <li>Clean title (bank already processed foreclosure)</li>
+                    <li>Various payment options available</li>
+                    <li>No haggling: prices usually firm but negotiable</li>
+                </ul>
+                
+                <p><strong>Disadvantages & Risks:</strong></p>
+                <ul>
+                    <li>Sold "as is where is" - no repairs from bank</li>
+                    <li>May need substantial repairs/renovation</li>
+                    <li>Possible occupants (previous owners) - eviction needed</li>
+                    <li>Limited viewing time and access</li>
+                    <li>Competition: bidding process common for prime properties</li>
+                </ul>
+                
+                <h3>Memorial Lots</h3>
+                <ul>
+                    <li>Niche market but steady demand</li>
+                    <li>Major players: Manila Memorial Park, Himlayang Pilipino, Heritage Park</li>
+                    <li>Commission: 5-15% typical (higher than real estate)</li>
+                    <li>Payment terms: installment plans available (6-36 months)</li>
+                </ul>
+            </div>
+            
+            <div id="regional-markets" class="section">
+                <h2>Regional Market Insights</h2>
+                
+                <h3>Metro Manila Hotspots</h3>
+                
+                <p><strong>BGC, Taguig:</strong></p>
+                <ul>
+                    <li>Price: ₱180,000-350,000/sqm</li>
+                    <li>Target: Young professionals, expats, investors</li>
+                    <li>Rental yield: 4-6% annually</li>
+                </ul>
+                
+                <p><strong>Makati CBD:</strong></p>
+                <ul>
+                    <li>Price: ₱150,000-300,000/sqm</li>
+                    <li>Established business hub</li>
+                    <li>Strong rental demand</li>
+                </ul>
+                
+                <p><strong>Quezon City:</strong></p>
+                <ul>
+                    <li>Price: ₱80,000-180,000/sqm</li>
+                    <li>Growth areas: Vertis North, Eastwood, UP Technohub</li>
+                    <li>More affordable vs BGC/Makati</li>
+                </ul>
+                
+                <p><strong>Manila Proper:</strong></p>
+                <ul>
+                    <li>Price: ₱60,000-120,000/sqm</li>
+                    <li>Student market near universities</li>
+                    <li>Lower prices due to congestion</li>
+                </ul>
+                
+                <h3>Cebu Market</h3>
+                <ul>
+                    <li>Second largest property market in Philippines</li>
+                    <li>Condo prices: ₱80,000-150,000/sqm</li>
+                    <li>Strong tourism and BPO sectors</li>
+                </ul>
+                
+                <h3>Davao Opportunities</h3>
+                <ul>
+                    <li>Third major market, fastest growing in Mindanao</li>
+                    <li>Condo prices: ₱60,000-100,000/sqm</li>
+                    <li>Growing BPO sector and infrastructure</li>
+                </ul>
+                
+                <h3>Provincial Emerging Markets</h3>
+                
+                <p><strong>CALABARZON:</strong></p>
+                <ul>
+                    <li>House & lot: ₱2M-6M typical</li>
+                    <li>Hottest: Cavite (Imus, Bacoor), Laguna (Sta. Rosa)</li>
+                    <li>CALAX expressway increased accessibility</li>
+                </ul>
+                
+                <p><strong>Pampanga & Bulacan:</strong></p>
+                <ul>
+                    <li>Clark Freeport Zone: Major growth driver</li>
+                    <li>House & lot: ₱2.5M-7M</li>
+                    <li>Metro Manila overflow market</li>
+                </ul>
+                
+                <p><strong>Iloilo City:</strong></p>
+                <ul>
+                    <li>Rising star in Visayas</li>
+                    <li>Condo prices: ₱50,000-90,000/sqm</li>
+                    <li>Good quality of life, less congested</li>
+                </ul>
+            </div>
+            
+            <div id="crisis" class="section">
+                <h2>Crisis Management</h2>
+                
+                <h3>Handling Deal Cancellations</h3>
+                <p><strong>Common Reasons:</strong></p>
+                <ul>
+                    <li>Buyer loses financing/job loss</li>
+                    <li>Title issues discovered</li>
+                    <li>Buyer's remorse</li>
+                    <li>Seller backs out for better offer</li>
+                </ul>
+                
+                <p><strong>Immediate Actions:</strong></p>
+                <ol>
+                    <li>Stay calm and professional</li>
+                    <li>Review contract cancellation clauses</li>
+                    <li>Document everything</li>
+                    <li>Contact both parties separately</li>
+                    <li>Attempt negotiation before formal cancellation</li>
+                </ol>
+                
+                <h3>Client Disputes</h3>
+                <p><strong>Undisclosed Defects:</strong></p>
+                <ul>
+                    <li>Review your disclosure documents</li>
+                    <li>If you didn't know: typically not liable</li>
+                    <li>If you knew: serious ethical violation</li>
+                    <li>Mediate repair cost negotiation</li>
+                </ul>
+                
+                <p><strong>Commission Disputes:</strong></p>
+                <ul>
+                    <li>Show signed listing agreement</li>
+                    <li>Document all work performed</li>
+                    <li>Escalate to firm's legal team if needed</li>
+                </ul>
+                
+                <h3>Managing Difficult Clients</h3>
+                
+                <p><strong>The Indecisive Buyer:</strong></p>
+                <ul>
+                    <li>Set clear criteria, narrow to 3-5 options</li>
+                    <li>Create decision matrix</li>
+                    <li>Set deadline for decision</li>
+                </ul>
+                
+                <p><strong>The Unrealistic Seller:</strong></p>
+                <ul>
+                    <li>Show comparable sold properties</li>
+                    <li>Present market data</li>
+                    <li>Suggest trial period at their price</li>
+                </ul>
+                
+                <div class="warning">
+                    <strong>Know When to Walk Away:</strong> You can terminate relationships if clients: refuse to respect boundaries, become abusive, ask for illegal/unethical actions, or waste time with no intent to transact.
+                </div>
+                
+                <h3>Title Issues</h3>
+                
+                <p><strong>Title Not in Seller's Name:</strong></p>
+                <ul>
+                    <li>Process: extrajudicial settlement, estate tax, transfer</li>
+                    <li>Timeline: 3-6 months minimum</li>
+                    <li>Cost: ₱50,000-200,000</li>
+                </ul>
+                
+                <p><strong>Liens or Encumbrances:</strong></p>
+                <ul>
+                    <li>Must be cleared before sale</li>
+                    <li>Seller responsibility to settle</li>
+                    <li>Option: Use sale proceeds to pay at closing</li>
+                </ul>
+                
+                <p><strong>Fake Title:</strong></p>
+                <ul>
+                    <li>STOP TRANSACTION IMMEDIATELY</li>
+                    <li>Verify at Registry of Deeds</li>
+                    <li>Report to authorities if fraud confirmed</li>
+                </ul>
+                
+                <h3>Natural Disasters</h3>
+                <p><strong>Typhoons and Flooding:</strong></p>
+                <ul>
+                    <li>Always check flood history</li>
+                    <li>Review hazard maps</li>
+                    <li>Disclosure required</li>
+                    <li>Remind buyers about flood insurance</li>
+                </ul>
+                
+                <p><strong>If Property Damaged Before Closing:</strong></p>
+                <ul>
+                    <li>Review "risk of loss" clause in contract</li>
+                    <li>Typically: Risk stays with seller until turnover</li>
+                    <li>Options: Cancel, renegotiate price, wait for repairs</li>
+                </ul>
+            </div>
+            
+            <div id="prospecting" class="section">
+                <h2>Prospecting & Lead Generation</h2>
+                
+                <h3>Building Your Lead Pipeline</h3>
+                <div class="highlight">
+                    <strong>The 80/20 Rule:</strong> 80% of business from 20% of activities. Focus on: referrals, past clients, sphere of influence, online leads.
+                </div>
+                
+                <h3>Cold Calling</h3>
+                <p><strong>Best Times:</strong></p>
+                <ul>
+                    <li>Weekdays: 10am-12pm, 2pm-4pm</li>
+                    <li>Saturdays: 10am-2pm</li>
+                    <li>Make 20-30 calls daily</li>
+                </ul>
+                
+                <div class="tip">
+                    <strong>Opening:</strong> "Good morning po! This is [Name] from [Brokerage]. I'm a licensed real estate broker specializing in [area]. Do you have 2 minutes? I'd like to share some exciting property opportunities."
+                </div>
+                
+                <h3>Door-to-Door</h3>
+                <p><strong>Approach:</strong></p>
+                <ol>
+                    <li>Dress professionally</li>
+                    <li>Bring business cards and flyers</li>
+                    <li>Best time: Saturday 10am-2pm</li>
+                    <li>Introduce yourself and offer value</li>
+                    <li>Leave materials if no one's home</li>
+                </ol>
+                
+                <div class="warning">
+                    <strong>Safety First:</strong> Door knock in pairs. Bring charged phone. Inform someone of your route. Trust your instincts.
+                </div>
+                
+                <h3>Open Houses</h3>
+                <div class="checklist">
+                    <div class="checklist-item">Schedule 2 weeks in advance</div>
+                    <div class="checklist-item">Clean and stage property</div>
+                    <div class="checklist-item">Print property flyers (50+ copies)</div>
+                    <div class="checklist-item">Place directional signs</div>
+                    <div class="checklist-item">Prepare refreshments</div>
+                    <div class="checklist-item">Create sign-in sheet</div>
+                </div>
+                
+                <h3>Referral Programs</h3>
+                <ul>
+                    <li>Past clients: 10-20% of commission on referrals</li>
+                    <li>Other professionals: ₱10,000-50,000 per closed referral</li>
+                    <li>Friends/family: Gift certificates, dinner vouchers</li>
+                </ul>
+                
+                <h3>Online Lead Generation</h3>
+                <p><strong>Facebook Lead Ads:</strong></p>
+                <ul>
+                    <li>Budget: ₱100-500/day</li>
+                    <li>Target: 25-45 years old, interested in real estate</li>
+                    <li>Cost per lead: ₱50-200</li>
+                    <li>Respond within 5 minutes</li>
+                </ul>
+                
+                <p><strong>Google Ads:</strong></p>
+                <ul>
+                    <li>Higher cost but better quality: ₱300-800/lead</li>
+                    <li>Active searchers (hot leads)</li>
+                    <li>Budget: ₱200-1,000/day minimum</li>
+                </ul>
+                
+                <h3>Prospecting Schedule</h3>
+                <div class="highlight">
+                    <strong>Daily (2-3 hours):</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>20-30 cold calls (30-45 min)</li>
+                        <li>5-10 follow-up calls (30 min)</li>
+                        <li>Social media engagement (30 min)</li>
+                        <li>Email responses (30 min)</li>
+                        <li>Database updates (15 min)</li>
+                    </ul>
+                </div>
+                
+                <p><strong>The Numbers:</strong></p>
+                <ul>
+                    <li>100 cold calls → 20 conversations → 5 appointments → 1 client</li>
+                    <li>50 online leads → 10 qualified → 3 showings → 1 offer</li>
+                </ul>
+            </div>
+            
+            <div id="reference" class="section">
+                <h2>Quick Reference Guide</h2>
+                
+                <h3>Important Phone Numbers</h3>
+                <div class="checklist">
+                    <div class="checklist-item">PRC: (02) 8736-4239</div>
+                    <div class="checklist-item">DHSUD: (02) 8655-8800</div>
+                    <div class="checklist-item">BIR: (02) 8538-3200</div>
+                    <div class="checklist-item">LRA: (02) 8527-2346</div>
+                    <div class="checklist-item">PAREB: (02) 8890-8560</div>
+                    <div class="checklist-item">Pag-IBIG: (02) 8724-4244</div>
+                </div>
+                
+                <h3>Common Terms Glossary</h3>
+                <ul>
+                    <li><strong>TCT:</strong> Titulo ng lupa - legal proof of ownership</li>
+                    <li><strong>Earnest Money:</strong> Paunang bayad - deposit</li>
+                    <li><strong>Deed of Sale:</strong> Kasulatan ng Bilihan</li>
+                    <li><strong>Down Payment:</strong> Paunang hulog</li>
+                    <li><strong>Amortization:</strong> Hulugan - monthly installment</li>
+                    <li><strong>Pre-selling:</strong> Hindi pa tapos ang gusali</li>
+                    <li><strong>RFO:</strong> Handa nang lipatan</li>
+                </ul>
+                
+                <h3>Area Conversions</h3>
+                <div class="highlight">
+                    <ul style="margin-top: 8px;">
+                        <li>1 sqm = 10.764 sqft</li>
+                        <li>1 hectare = 10,000 sqm = 2.471 acres</li>
+                        <li>Example: 50 sqm condo = 538 sqft</li>
+                        <li>Example: 150 sqm house = 1,615 sqft</li>
+                    </ul>
+                </div>
+                
+                <h3>Commission Calculator</h3>
+                <div class="tip">
+                    <strong>Examples (5% commission):</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>₱3M property = ₱150,000</li>
+                        <li>₱5M property = ₱250,000</li>
+                        <li>₱10M property = ₱500,000</li>
+                        <li>If split 50/50 with buyer's agent: divide by 2</li>
+                    </ul>
+                </div>
+                
+                <h3>Tax & Fee Reference</h3>
+                <div class="highlight">
+                    <strong>Seller's Costs:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Capital Gains Tax: 6%</li>
+                        <li>Documentary Stamp Tax: 1.5%</li>
+                        <li>Transfer Tax: 0.5-0.75%</li>
+                        <li>Broker Commission: 3-5%</li>
+                        <li>Total: ~11-13% of selling price</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight">
+                    <strong>Buyer's Costs:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Transfer Fee: ~0.25%</li>
+                        <li>Registration: ₱3,000-10,000</li>
+                        <li>Bank Processing: 1-2% (if financed)</li>
+                        <li>Total: ~2-4%</li>
+                    </ul>
+                </div>
+                
+                <h3>Property Inspection Checklist</h3>
+                <div class="checklist">
+                    <div class="checklist-item">Structural: cracks, leaks, foundation</div>
+                    <div class="checklist-item">Electrical: outlets, circuit breaker</div>
+                    <div class="checklist-item">Plumbing: water pressure, drainage</div>
+                    <div class="checklist-item">Roof condition</div>
+                    <div class="checklist-item">Windows/doors operational</div>
+                    <div class="checklist-item">Pest infestation check</div>
+                    <div class="checklist-item">Flood history</div>
+                    <div class="checklist-item">Utilities availability</div>
+                    <div class="checklist-item">Documents: title, tax dec, permits</div>
+                </div>
+            </div>
+            
+            <div id="career" class="section">
+                <h2>Career Growth Path</h2>
+                
+                <h3>Career Progression</h3>
+                <ol>
+                    <li><strong>Salesperson (0-2 years):</strong> Learning, working under broker</li>
+                    <li><strong>Licensed Broker (2-5 years):</strong> Independent practice</li>
+                    <li><strong>Senior Broker (5-10 years):</strong> Established reputation</li>
+                    <li><strong>Broker-Owner (10+ years):</strong> Running own firm</li>
+                </ol>
+                
+                <h3>Building Your Brokerage Firm</h3>
+                <p><strong>Requirements:</strong></p>
+                <ul>
+                    <li>Active PRC broker license</li>
+                    <li>Register business with DTI or SEC</li>
+                    <li>Get Mayor's Permit and business permits</li>
+                    <li>BIR registration</li>
+                    <li>DHSUD accreditation</li>
+                    <li>Professional indemnity insurance</li>
+                </ul>
+                
+                <p><strong>Startup Costs:</strong></p>
+                <ul>
+                    <li>Business registration: ₱10,000-30,000</li>
+                    <li>Office setup: ₱50,000-150,000</li>
+                    <li>Marketing materials: ₱30,000-80,000</li>
+                    <li>Working capital (6 months): ₱100,000-300,000</li>
+                    <li><strong>Total: ₱210,000-600,000 minimum</strong></li>
+                </ul>
+                
+                <div class="warning">
+                    <strong>Don't rush!</strong> Make sure you have: (1) Consistent income for 2+ years, (2) Strong client database, (3) Emergency fund for 6-12 months, (4) Systems in place.
+                </div>
+                
+                <h3>Hiring Agents</h3>
+                <p><strong>Commission Split Models:</strong></p>
+                <ul>
+                    <li>New agents: 50/50 split</li>
+                    <li>Experienced agents: 60/40 or 70/30 (agent favor)</li>
+                    <li>Top producers: 80/20 or 90/10</li>
+                </ul>
+                
+                <p><strong>Desk Fee Model:</strong></p>
+                <ul>
+                    <li>Agent pays ₱5,000-15,000/month</li>
+                    <li>Agent keeps 100% commission</li>
+                    <li>Good for experienced agents</li>
+                </ul>
+                
+                <h3>Property Management Services</h3>
+                <p><strong>Why Add It:</strong></p>
+                <ul>
+                    <li>Recurring revenue: 10-15% of monthly rent</li>
+                    <li>Income stability during slow sales</li>
+                    <li>Keep relationship with investor clients</li>
+                    <li>Example: 20 units @ ₱30K rent = ₱60K-90K monthly</li>
+                </ul>
+                
+                <h3>Real Estate Investing</h3>
+                <div class="highlight">
+                    <strong>Pre-Selling Flipping:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Buy pre-selling, sell before turnover</li>
+                        <li>Capital: ₱200,000-500,000 for DP</li>
+                        <li>Hold: 2-4 years</li>
+                        <li>Expected gain: 20-50%</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight">
+                    <strong>Buy and Hold Rental:</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>Purchase RFO, rent long-term</li>
+                        <li>Target: 5-8% annual rental yield</li>
+                        <li>Monthly cash flow + appreciation</li>
+                        <li>Capital: ₱500K-2M for DP</li>
+                    </ul>
+                </div>
+                
+                <h3>Income Milestones</h3>
+                <ul>
+                    <li><strong>Year 1:</strong> ₱150K-400K (1-3 deals)</li>
+                    <li><strong>Year 2:</strong> ₱400K-800K (3-6 deals)</li>
+                    <li><strong>Year 3:</strong> ₱800K-1.5M (6-10 deals)</li>
+                    <li><strong>Year 5:</strong> ₱1.5M-3M (10-15 deals)</li>
+                    <li><strong>Year 10:</strong> ₱3M-8M+ (15-25+ deals)</li>
+                </ul>
+                
+                <p><strong>Top 10% Brokers:</strong></p>
+                <ul>
+                    <li>Earn ₱5M-15M+ annually</li>
+                    <li>Specialize in luxury or commercial</li>
+                    <li>Have team of 5-15 agents</li>
+                    <li>Multiple income streams</li>
+                </ul>
+                
+                <h3>Profitable Niches</h3>
+                <ul>
+                    <li><strong>Luxury Properties:</strong> ₱20M+ deals, higher commissions</li>
+                    <li><strong>Commercial Real Estate:</strong> Offices, retail, warehouses</li>
+                    <li><strong>Foreclosed Properties:</strong> Bank partnerships</li>
+                    <li><strong>OFW Market:</strong> Filipinos abroad investing</li>
+                    <li><strong>Retirement Properties:</strong> Retirees and expats</li>
+                </ul>
+                
+                <div class="tip">
+                    <strong>Positioning:</strong> Within 3-5 years, become THE expert in one niche. "The BGC Condo Specialist" or "The Cavite Expert." Specialization = premium pricing.
+                </div>
+                
+                <h3>Success Habits</h3>
+                <ul>
+                    <li><strong>Consistency:</strong> Daily prospecting, no matter how busy</li>
+                    <li><strong>Follow-Up:</strong> 80% of sales after 5+ follow-ups</li>
+                    <li><strong>Learning:</strong> Read, attend seminars, stay updated</li>
+                    <li><strong>Networking:</strong> Build genuine relationships</li>
+                    <li><strong>Service:</strong> Client needs first, commissions follow</li>
+                    <li><strong>Systems:</strong> Use CRM, checklists, automation</li>
+                    <li><strong>Financial:</strong> Save 30%, invest 20%, live on 50%</li>
+                </ul>
+                
+                <p><strong>Remember:</strong> Real estate is a marathon, not a sprint. Success comes from consistency, ethics, client focus, and always learning. Your license is just the beginning - your reputation determines your success.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2026 Filipino Real Estate Broker Guide | For Professional Use
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            const buttons = document.querySelectorAll('.nav-btn');
+            
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+            
+            document.querySelector('.content').scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
